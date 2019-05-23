@@ -1,0 +1,151 @@
+#+TITLE: Emacs configuration
+
+* Basic preferences
+
+#+BEGIN_SRC emacs-lisp
+(setq inhibit-startup-screen t)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(defalias 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
+
+** Macro to reset file
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd"C-c r") (lambda ()
+                               (interactive)
+                               (revert-buffer t t t)
+(message "buffer is reverted")))
+#+END_SRC
+
+** No backup
+#+BEGIN_SRC emacs-lisp
+(setq make-backup-files nil)
+#+END_SRC
+   
+** Prevent noise when C-g is hit
+#+BEGIN_SRC emacs-lisp
+(setq visible-bell t)
+#+END_SRC
+
+** Parenthesis (Highlights and pair)
+#+BEGIN_SRC emacs-lisp
+(electric-pair-mode 1)
+(show-paren-mode 1)
+#+END_SRC
+
+** Renaming frame-title
+#+BEGIN_SRC emacs-lisp
+(setq frame-title-format
+	'(buffer-file-name "%f"
+			   (dired-directory dired-directory "%b")))
+#+END_SRC
+   
+
+* Packages
+** MELPA
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'package-archives
+   '("melpa" . "https://melpa.org/packages/") t)
+
+(package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(defvar myPackages
+  '(ido
+    elpy
+    flycheck
+    py-autopep8))
+;; May need: ein
+
+(mapc #'(lambda (package)
+    (unless (package-installed-p package)
+      (package-install package)))
+      myPackages)
+#+END_SRC
+   
+
+* IDO 
+Interactively Do Things
+#+BEGIN_SRC emacs-lisp
+(ido-mode 1)
+(setq ido-everywhere t)
+(setq ido-enable-flex-matching t)
+(setq ido-use-filename-at-point 'guess)
+(setq ido-create-new-buffer 'always)
+(setq ido-file-extenison-order '(".py" ".org"))
+#+END_SRC
+
+
+* Org-mode
+
+** Org-system:
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c c") 'org-capture)
+
+(setq org-directory "~/Dropbox/org")
+(setq org-default-notes-file "~/Dropbox/org/journal.org")
+(global-set-key (kbd "C-c o") 
+                (lambda () (interactive) (find-file "~/Dropbox/org/journal.org")))
+(setq org-agenda-files (quote ("~/Dropbox/org/gtd.org")))
+
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
+
+#+END_SRC
+** spell-check for org-mode
+#+BEGIN_SRC emacs-lisp
+(with-eval-after-load "org"
+  (define-key org-mode-map (kbd "<f8>") 'ispell-buffer)
+  (add-hook 'org-mode-hook 'flyspell-mode))
+#+END_SRC
+   
+** Auto-Fill mode
+fill your paragraphs automatically 
+#+BEGIN_SRC emacs-lisp
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+#+END_SRC
+
+
+* Python
+
+** spell-check for python commands
+#+BEGIN_SRC emacs-lisp
+(add-hook 'python-mode-hook 'flyspell-prog-mode)
+#+END_SRC
+
+** Line numbers
+#+BEGIN_SRC emacs-lisp
+(add-hook 'python-mode-hook 'linum-mode)
+#+END_SRC
+
+** elpy
+#+BEGIN_SRC emacs-lisp
+(elpy-enable)
+
+;; autopep8 automatically formats Python code to conform to the PEP 8 style guide.
+;; enable autopep8 formatting on save
+(require 'py-autopep8)
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+#+END_SRC
+
+** Abbrev mode 
+#+BEGIN_SRC emacs-lisp
+(add-hook 'python-mode-hook 'abbrev-mode)
+;; tell emacs where to read abbrev definitions from...
+(setq abbrev-file-name               
+        "~/config/abbrev_defs")
+;; save abbrevs when files are saved
+(setq save-abbrevs 'silent)
+#+END_SRC
+
+
+* May for later
+ (add-to-list 'default-frame-alist '(fullscreen . maximized))
+

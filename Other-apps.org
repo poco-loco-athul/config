@@ -1,0 +1,45 @@
+* Recommendations 
+** gnome-tweaks
+** htop
+** ubuntu-restricted-extras
+** gimp
+** inkscape
+** Libre office
+** synaptic
+** Screen recorder: Kazam
+SUPER-CTRL-R : Use below keys to Start the Recording
+SUPER-CTRL-F : Use below keys to Finish the recording
+SUPER-CTRL-P : Use below keys to Pause the recording
+SUPER-CTRL-Q : Use below Keys to Quit the recording
+
+** Music
+  DeaDBeeF
+  Gnome Music
+  Audacious
+  Rhytmbox
+  Clementine
+** Mail client
+  Thunderbird
+  Geary
+  Evolution
+
+
+* Miscellaneous
+** f.lux
+** smem
+   Report memory usage with shared memory divided proportionally. 
+** autokey
+keyboard shortcut manager
+** Mcelog 
+troubleshooting
+  
+** Conky
+
+
+
+* Gnome-Shell-Extensions
+** chrome-gnome-shell
+** DONE Noz title bar
+** DONE Alternatetab
+** Pomodoro
+** Hide top bar

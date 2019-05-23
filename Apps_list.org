@@ -1,0 +1,9 @@
+exfat-utils exfat-fuse 
+emacs
+gtypist
+git-all
+usb-creator-gtk
+vlc
+telegram-desktop
+python3-pip
+dropbox
