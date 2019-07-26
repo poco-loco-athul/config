@@ -55,6 +55,8 @@
 (defvar myPackages
   '(ido
     elpy
+    gruvbox-theme
+    web-mode
     flycheck
     py-autopep8))
 ;; May need: ein
@@ -143,6 +145,13 @@ fill your paragraphs automatically
         "~/config/abbrev_defs")
 ;; save abbrevs when files are saved
 (setq save-abbrevs 'silent)
+#+END_SRC
+
+
+* Themes
+#+BEGIN_SRC emacs-lisp
+(require 'gruvbox)
+(load-theme 'gruvbox t)
 #+END_SRC
 
 
