@@ -1,0 +1,16 @@
+[user]
+	email = kpathul@outlook.com
+	name = Athul KP
+[core]
+	editor = emacs
+[pull]
+	rebase = True
+[alias]
+	st = status
+	cm = commit -m
+	can = commit --amend --no-edit
+	olog = log --pretty=oneline
+	lg = log -p
+	co = checkout
+	br = branch
+	dc = diff --cached

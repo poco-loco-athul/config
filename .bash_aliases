@@ -1,1 +1,0 @@
-/home/athul/.bash_aliases
