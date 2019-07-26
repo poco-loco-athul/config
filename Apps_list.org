@@ -6,4 +6,4 @@ usb-creator-gtk
 vlc
 telegram-desktop
 python3-pip
-dropbox
+nautilus-dropbox
