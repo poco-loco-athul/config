@@ -80,6 +80,20 @@ Interactively Do Things
 #+END_SRC
 
 
+* magit
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-x g") 'magit-status)
+#+END_SRC
+
+
+* webmode
+#+BEGIN_SRC emacs-lisp
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(setq web-mode-enable-current-element-highlight t)
+#+END_SRC
+
+
 * Org-mode
 
 ** Org-system:
