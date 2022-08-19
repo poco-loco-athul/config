@@ -1,6 +1,6 @@
 ln ~/config/emacs ~/.emacs
-ln ~/config/gitconfig ~/.gitconfig
-ln ~/config/pythonrc ~/.pythonrc
+ln -P ~/config/gitconfig ~/.gitconfig
+ln -P ~/config/pythonrc ~/.pythonrc
 
 
 echo "# Custom changes follows:
