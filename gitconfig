@@ -8,8 +8,17 @@
 	st = status
 	cm = commit -m
 	can = commit --amend --no-edit
-	olog = log --pretty=format:"%C(cyan)%cD%Creset|%Cred%t%Creset|%Cgreen%s%Creset|%C(yellow)%cn"
+	olog = log --pretty=format:"%C(cyan)%cD%Creset|%Cred%h%Creset|%Cgreen%s%Creset|%C(yellow)%cn"
 	lg = log -p
 	co = checkout
 	br = branch
 	dc = diff --cached
+	rc = rebase --continue
+	sp = stash pop
+	log-test = log --pretty=format:"%C(cyan)%at%Creset|%Cred%h%Creset"
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+[help]
+	autocorrect = 1
