@@ -94,7 +94,7 @@ Interactively Do Things
 * Persistent scratch
 #+BEGIN_SRC emacs-lisp
 (persistent-scratch-setup-default)
-(persistent-scratch-save-to-file "~/Dropbox/scrath.txt")
+(persistent-scratch-save-to-file "~/Dropbox/scratch.txt")
 (persistent-scratch-autosave-mode 1)
 #+END_SRC
 
