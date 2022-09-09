@@ -93,9 +93,9 @@ Interactively Do Things
 
 * Persistent scratch
 #+BEGIN_SRC emacs-lisp
-(persistent-scratch-setup-default)
-(persistent-scratch-save-to-file "~/Dropbox/scratch.txt")
+(add-hook 'after-init-hook (lambda () (persistent-scratch-restore-from-file "~/Dropbox/scratch.txt")))
 (persistent-scratch-autosave-mode 1)
+(add-hook 'kill-emacs-hook (lambda () (persistent-scratch-save-to-file "~/Dropbox/scratch.txt")))
 #+END_SRC
 
 
