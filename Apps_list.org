@@ -6,4 +6,5 @@ usb-creator-gtk
 vlc
 telegram-desktop
 python3-pip
+virtualenv virtualenvwrapper
 nautilus-dropbox
