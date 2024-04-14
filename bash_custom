@@ -8,8 +8,9 @@ fi
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 export WORKON_HOME=/home/athul/.virtualenvs
 export PYTHONSTARTUP=~/config/pythonrc
-export PYTHON_EXE=$(which python3.8)
-export VIRTUALENVWRAPPER_PYTHON=$(which python3.8)
+export PYTHON_EXE=$(which python3.11)
+export VIRTUALENVWRAPPER_PYTHON=$(which python3.11)
+export PATH="$HOME/.local/bin:$PATH"
 
 # Git
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -25,5 +26,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Save history as it happens
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
+export AWS_SDK_LOAD_CONFIG=1
 
 . ~/config/z.sh
