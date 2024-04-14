@@ -15,6 +15,7 @@
 	dc = diff --cached
 	rc = rebase --continue
 	sp = stash pop
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
 	log-test = log --pretty=format:"%C(cyan)%at%Creset|%Cred%h%Creset"
 [init]
 	defaultBranch = main
