@@ -2,6 +2,7 @@
 	name = Athul KP
 [core]
 	editor = emacs
+	hooksPath = ~/config/git-templates/hooks
 [pull]
 	rebase = True
 [alias]
@@ -23,3 +24,5 @@
 	prune = true
 [help]
 	autocorrect = 1
+[push]
+	autoSetupRemote = true
