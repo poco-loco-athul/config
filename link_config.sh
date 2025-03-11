@@ -1,5 +1,5 @@
 ln ~/config/emacs ~/.emacs
-ln -P ~/config/gitconfig ~/.gitconfig
+ln -s ~/config/gitconfig ~/.gitconfig
 
 
 echo "# Custom changes follows:
