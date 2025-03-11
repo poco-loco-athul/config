@@ -93,9 +93,9 @@ Interactively Do Things
 
 * Persistent scratch
 #+BEGIN_SRC emacs-lisp
-(add-hook 'after-init-hook (lambda () (persistent-scratch-restore-from-file "~/Dropbox/scratch.txt")))
+(add-hook 'after-init-hook (lambda () (persistent-scratch-restore-from-file "~/Documents/scratch.txt")))
 (persistent-scratch-autosave-mode 1)
-(add-hook 'kill-emacs-hook (lambda () (persistent-scratch-save-to-file "~/Dropbox/scratch.txt")))
+(add-hook 'kill-emacs-hook (lambda () (persistent-scratch-save-to-file "~/Documents/scratch.txt")))
 #+END_SRC
 
 
@@ -121,16 +121,16 @@ Interactively Do Things
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 
-(setq org-directory "~/Dropbox/org")
-(setq org-default-notes-file "~/Dropbox/org/journal.org")
+(setq org-directory "~/Documents/org")
+(setq org-default-notes-file "~/Documents/org/journal.org")
 (global-set-key (kbd "C-c o") 
-                (lambda () (interactive) (find-file "~/Dropbox/org/journal.org")))
-(setq org-agenda-files (quote ("~/Dropbox/org/gtd.org")))
+                (lambda () (interactive) (find-file "~/Documents/org/journal.org")))
+(setq org-agenda-files (quote ("~/Documents/org/gtd.org")))
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/Documents/org/gtd.org" "Tasks")
          "* TODO %?\n  %i\n  %a")
-        ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
+        ("j" "Journal" entry (file+datetree "~/Documents/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")))
 
 #+END_SRC
